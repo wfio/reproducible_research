@@ -43,6 +43,8 @@ plot(dfs.3$interval, dfs.3$avg, type = 'l', main = "Average Daily Activity ",
 ```
 
 ```{r Imputing missing values}
+#Impute missing values by merging NAs with the calculated means
+#of each day (as grouped)
 df1.1 <- group_by(df1, date)
 df1.2 <- summarise(df1.1, avg = mean(steps, na.rm = TRUE))
 df1.3 <- merge(df1, df1.2, all.x = TRUE)
@@ -52,6 +54,7 @@ df1.6 <- summarise(df1.5, total=sum(steps, na.rm = TRUE))
 hist(df1.6$total,breaks = 4, main = "Activity - Steps in a Day (Imputed Data)",
      ylab = "Frequency", xlab = "Total [Imputed] Steps per Day")
 dfs2.1 <- summarise(df1.6, avg=mean(total, na.rm = TRUE), med=median(total))
+print(dfs2.1)
 ```
 ```{r Weekend vs Weeday Steps - Time Series}
 dayType <- c('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday') 

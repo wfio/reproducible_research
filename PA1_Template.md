@@ -91,4 +91,4 @@ qplot(interval, avgInt, data = df1.4.summarised, geom = 'line', facets = dayType
 
 ![plot of chunk Weekend vs Weeday Steps - Time Series](figure/Weekend vs Weeday Steps - Time Series-1.png) 
 
-This HTML markdown file was generated: Wed Aug 12 01:33:18 PM 2015.
+This HTML markdown file was generated: Sun Aug 16 03:43:04 PM 2015.
